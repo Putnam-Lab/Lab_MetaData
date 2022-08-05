@@ -1,0 +1,75 @@
+@MEDFORD Becker & Silbiger 2020 
+@MEDFORD-Version 1.0 
+#Annotation by Putnam Lab 08/05/2022
+
+@Paper_Primary Nutrient and sediment loading affect multiple facets of functionality in a tropical branching coral
+@Paper_Primary-Link https://pubmed.ncbi.nlm.nih.gov/32943577/ 
+
+@Journal Journal of Experimental Biology 
+@Journal-Volume 223
+@Journal-Issue 21
+@Journal-Pages jeb225045
+#Insert page number here - what is the correct minor tag to use? 
+#Need to figure out how to have VSCode give us a drop down menu of the minor tags available 
+#We found that if the minor tag is incorrect it will stay white while correct minor tags turn blue 
+
+@Date 2020-11-06
+#Recommend drop downs for format of date or an error that comes up if there is an issue with format
+#Ask how QC/error detection works
+#For dates maybe minor tags for YEAR, MONTH, DAY 
+
+@Contributor Danielle M Becker
+@Contributor-Association Department of Biology, California State University, Northridge, CA 91330, USA
+@Contributor-Role First Author
+@Contributor-Email danielle.becker.927@my.csun.edu
+
+@Contributor Nyssa J Silbiger
+@Contributor-Association Department of Biology, California State University, Northridge, CA 91330, USA
+@Contributor-Role Senior Author
+@Contributor-Email nyssa.silbiger@csun.edu
+
+@Funding National Science Foundation OCE
+@Funding-ID 19-24281 
+#would be good to have a minor tag for who the award was awarded to 
+
+@Funding American Academy of Underwater Sciences Foundations 2018 Masters Research Scholarship
+@Funding CSUN Office of Graduate Studies
+@Funding CSUN Department of Biology
+@Funding CSUN Associated Students
+@Funding CSUN College of Sciences and Mathematics
+@Funding CSUN Research and Graduate Studies 
+@Funding National Science Foundation Graduate Research Fellowship 
+@Funding Gordon and Betty Moore Foundation 
+#how does spacing impact format of the Medford file? 
+
+@Funding National Science Foundation OCE 
+@Funding-ID 16-37396
+
+@Species Pocillopora acuta 
+@Species-Reef North-shore fringing reefs 
+@Species-Loc Moorea, French Polynesia 
+
+#The minor tag Reef stays white and doesn't seem to be recognized?   
+#We need GPS too 
+
+#ReefCollection and CultureCollection should have Date in the name of the minor tag to avoid confusion and date should have a standard format (see note on Date above) 
+#Potential problem: there may be multiple collection dates (e.g., collecting fragments on different dates during a culture/experiment)
+#What about using Site or Origin as the major tag rather than species. Then you would say what species came from this site. 
+#Also need country/reef/location/site as a major tag rather than within species. 
+#Taxonomy within species rather than a separate major tag 
+#Take home: Species doesn't make much sense logistically for a main tag - site would make more sense here 
+#What do we do for cases where we have multiple reef collection/culture collection dates?
+#Can we have multiple of the same minor tags? E.g., multiple dates. 
+#Need to have sample type (fragment, biopsy, or based on size) 
+
+@Method Sediment Trap
+@Method-Type Sedimentation rates on the reef 
+@Method-Note 
+#Where would you put specifications or references for the methods that you are using? Do we include that? 
+
+@Method CHN analysis
+@Method-Type Algal Tissue Nitrogen
+#What is method type? Do we need something about "measurement" or more specific minor tags? 
+#Need a tag for where it was done if not in Notes 
+#Maybe also a tag for equipment? 
+
