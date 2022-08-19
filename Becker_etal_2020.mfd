@@ -9,6 +9,7 @@
 @Journal-Volume 223
 @Journal-Issue 21
 @Journal-Pages jeb225045
+
 #Insert page number here - what is the correct minor tag to use? 
 #Need to figure out how to have VSCode give us a drop down menu of the minor tags available 
 #We found that if the minor tag is incorrect it will stay white while correct minor tags turn blue 
@@ -48,6 +49,7 @@
 @Species Pocillopora acuta 
 @Species-Reef North-shore fringing reefs 
 @Species-Loc Moorea, French Polynesia 
+@Species-Loc Tetiaroa, French Polynesia 
 
 #The minor tag Reef stays white and doesn't seem to be recognized?   
 #We need GPS too 
@@ -60,7 +62,8 @@
 #Take home: Species doesn't make much sense logistically for a main tag - site would make more sense here 
 #What do we do for cases where we have multiple reef collection/culture collection dates?
 #Can we have multiple of the same minor tags? E.g., multiple dates. 
-#Need to have sample type (fragment, biopsy, or based on size) 
+#Need to have sample type (fragment, biopsy, or based on size)
+#Origin, culture, transplant tags maybe?  
 
 @Method Sediment Trap
 @Method-Type Sedimentation rates on the reef 
@@ -73,3 +76,20 @@
 #Need a tag for where it was done if not in Notes 
 #Maybe also a tag for equipment? 
 
+
+@Code_Ref testing 
+#Code_Ref questions - why is code ref white above? 
+#What is the rule for listing packages or programs? What gets listed and what doesn't? 
+#We think it should include things like: major packages and programs, versions, analysis-specific packages (like DESeq or WGCNA, but not ggplot etc) 
+#Maybe Code Ref shoudl have a section of code for data type - e.g., 16S or RNA
+#Minor tags for bioinformatics or Linux or R or Python? Like a Language category then add packages or software within that language 
+#Where do we put design for packages like models, permanovas, DESeq2 - where is it appropriate to include these? 
+##What is the best way to talk about the coding method? Whats the easiest structure - what is the best major tag? 
+
+@Data_Ref 
+#What gets referenced in this section? They reference every table, figure, and file - if we did that it would be many things. 
+#When do we reference specific files and when can we reference the major github repo or files within the repo? 
+#When do you need to add the size of the file? 
+#For example having an entry for GitHub scripts/ data/ output/ figures/ ? 
+
+#We need a complete list/key with all major and minor tags possible 
