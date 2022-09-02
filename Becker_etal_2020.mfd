@@ -4,20 +4,27 @@
 
 @Paper_Primary Nutrient and sediment loading affect multiple facets of functionality in a tropical branching coral
 @Paper_Primary-Link https://pubmed.ncbi.nlm.nih.gov/32943577/ 
+@Paper_Primary-Link https://journals.biologists.com/jeb/article/223/21/jeb225045/226192/Nutrient-and-sediment-loading-affect-multiple 
+@Paper_Primary-DOI insert DOI here 
+#Include the primary paper link here (for example this is pubmed); add DOI or direct journal link 
 
 @Journal Journal of Experimental Biology 
 @Journal-Volume 223
 @Journal-Issue 21
 @Journal-Pages jeb225045
 
-#Insert page number here - what is the correct minor tag to use? 
-#Need to figure out how to have VSCode give us a drop down menu of the minor tags available 
-#We found that if the minor tag is incorrect it will stay white while correct minor tags turn blue 
+#We would like to figure out how to have VSCode show the drop down window for the options for minor tags after a major tag. Currently, the autofill/drop down menu only shows objects/macros that have already been defined. Is this possible in VS Code? 
+#SOLUTION: Make VSCode into Safe mode, rather than Restricted Mode; this was fixed in a previous update to Medford 
+
+#We found that if the minor tag is incorrect it will stay white while correct minor tags turn blue. See below areas where we are using the correct major tag but it does not turn blue indicating it is not recognized by the Medford language in VS Code. 
 
 @Date 2020-11-06
-#Recommend drop downs for format of date or an error that comes up if there is an issue with format
-#Ask how QC/error detection works
-#For dates maybe minor tags for YEAR, MONTH, DAY 
+@Date-Note publication date 
+#Can use Note to associate with a specific event 
+
+#We would recommend having minor tags under date for Year Month and Day to standardize the date format. 
+#Follow standardized MEDFORD format for Date, this also allows for time entry if applicable; also planning to have a minor token for time zone 
+#Format = UTC format; YYYY-MM-DD H:M:S Timezone (24h time)
 
 @Contributor Danielle M Becker
 @Contributor-Association Department of Biology, California State University, Northridge, CA 91330, USA
@@ -31,9 +38,13 @@
 
 @Funding National Science Foundation OCE
 @Funding-ID 19-24281 
-#would be good to have a minor tag for who the award was awarded to 
+@Funding-Note Awardee Silbiger
+#It would be useful to also have a minor tag for which contributor the award was awarded: Contributor, Awardee
+#Medford will parse this by looking at the major tag so every following minor tag is associated with this major tag until a new major tag is found 
 
 @Funding American Academy of Underwater Sciences Foundations 2018 Masters Research Scholarship
+@Funding-Note Awardee Becker 
+
 @Funding CSUN Office of Graduate Studies
 @Funding CSUN Department of Biology
 @Funding CSUN Associated Students
@@ -41,55 +52,89 @@
 @Funding CSUN Research and Graduate Studies 
 @Funding National Science Foundation Graduate Research Fellowship 
 @Funding Gordon and Betty Moore Foundation 
-#how does spacing impact format of the Medford file? 
 
 @Funding National Science Foundation OCE 
 @Funding-ID 16-37396
 
-@Species Pocillopora acuta 
-@Species-Reef North-shore fringing reefs 
-@Species-Loc Moorea, French Polynesia 
-@Species-Loc Tetiaroa, French Polynesia 
 
-#The minor tag Reef stays white and doesn't seem to be recognized?   
-#We need GPS too 
+@Species Pocillopora  
+@Species-Loc Mahana, Moorea, French Polynesia 
+@Species-Loc Hilton, Moorea, French Polynesia 
+@Species-Loc Manava, Moorea, French Polynesia 
+@Species-ReefCollection January 2020
+@Species-Note POC-100:POC-300
 
-#ReefCollection and CultureCollection should have Date in the name of the minor tag to avoid confusion and date should have a standard format (see note on Date above) 
-#Potential problem: there may be multiple collection dates (e.g., collecting fragments on different dates during a culture/experiment)
-#What about using Site or Origin as the major tag rather than species. Then you would say what species came from this site. 
-#Also need country/reef/location/site as a major tag rather than within species. 
-#Taxonomy within species rather than a separate major tag 
-#Take home: Species doesn't make much sense logistically for a main tag - site would make more sense here 
+@Species Porites  
+@Species-Loc Mahana, Moorea, French Polynesia 
+@Species-Loc Hilton, Moorea, French Polynesia 
+@Species-Loc Manava, Moorea, French Polynesia 
+@Species-ReefCollection January 2020
+@Species-Note POR-100:POR-300
+
+@Species Pocillopora
+@Species-Note (relevant SPECIES info)
+
+@Reef Mahana, Moorea, French Polynesia # Probably have this as a short name
+@Reef-Latitude (lat coord)
+@Reef-Longitude (long coord)
+@Reef-Depth (depth)
+
+@Cultured CultureLoc
+@Cultured-Location (loc)
+
+@Sample sample1
+@Sample-SpeciesRef Pocillopora
+@Sample-ReefRef Mahana
+@Sample-CollectionDate (date)
+@Sample-Notes blka bla stress study etc
+@Sample-Notes (treatment info)
+@Sample-Range (range)
+
+#The minor tag Reef stays white and doesn't seem to be recognized by VS code as a Medford major tag   
+
+#We recommend a minor tag for GPS coordinates as well
+#ReefCollection and CultureCollection would also benefit from being associated with a date tag. How should we enter metadata when multiple collection dates were taken and associated with unique code, data, or species? 
+#It would be useful to discuss the option of having Site or Origin as a major tag rather than species in some applications. This would have the option for species as a minor tag within Site/Origin. The organization of site/species would be interesting to discuss further for applicability. 
+#Taxonomy could also be contained within species rather than a separate major tag 
 #What do we do for cases where we have multiple reef collection/culture collection dates?
-#Can we have multiple of the same minor tags? E.g., multiple dates. 
-#Need to have sample type (fragment, biopsy, or based on size)
-#Origin, culture, transplant tags maybe?  
+#Can we have multiple entries of the same minor tags? E.g., multiple dates within the same species or site or reef?  
+#It would be useful to have a minor tag for sample type (fragment, biopsy, lifestage, etc.)
+#Origin, culture, transplant tags could be useful for describing more complex site designs  
 
 @Method Sediment Trap
 @Method-Type Sedimentation rates on the reef 
 @Method-Note 
-#Where would you put specifications or references for the methods that you are using? Do we include that? 
+#Method as a description of type of method (type= RNAseq) so someone could search for methods similar to their own, add more specific information in the Note 
+
+@Method Oxygen flux
+@Method-Type Oxygen concentration
+@Method-Note OXY-10 
+@Method-Note Photosynthesis and respiration
+@Method-Note Holobiont
+@Method-Protocol link to protocol?
+#You can add whatever minor/major tags that you want - its ok if they turn white; the blue tokens are expected by MEDFORD, but you can add anything you want. MEDFORD just may not know how to handle/submission for unrecognized tags 
+
+#Flexible, add information that you think is relevant in the Notes section; consider what the method is called by others in the field (i.e., oxygen flux vs respirometry) 
 
 @Method CHN analysis
 @Method-Type Algal Tissue Nitrogen
-#What is method type? Do we need something about "measurement" or more specific minor tags? 
-#Need a tag for where it was done if not in Notes 
-#Maybe also a tag for equipment? 
+#What is method type? Do we need something about "measurement" or more specific minor tags? It would be useful to discuss more specific minor tags for methods. 
 
+@Software_Ref wgcna
+@Software_Ref-Language 
+@Software_Ref-
+#Code_Ref should be Software_Ref
+#What is the rule for listing packages or programs? What gets listed and what doesn't? Sometimes we have dozens of packages - ranging from plotting to analysis. Which should be included? 
+#We think it could include things like: major packages and programs, versions, analysis-specific packages (like DESeq or WGCNA, but not ggplot etc) 
+#It would also be useful for Code Ref to have a section of code for language - e.g., R or Python - this would help categorize the code language. 
 
-@Code_Ref testing 
-#Code_Ref questions - why is code ref white above? 
-#What is the rule for listing packages or programs? What gets listed and what doesn't? 
-#We think it should include things like: major packages and programs, versions, analysis-specific packages (like DESeq or WGCNA, but not ggplot etc) 
-#Maybe Code Ref shoudl have a section of code for data type - e.g., 16S or RNA
-#Minor tags for bioinformatics or Linux or R or Python? Like a Language category then add packages or software within that language 
-#Where do we put design for packages like models, permanovas, DESeq2 - where is it appropriate to include these? 
-##What is the best way to talk about the coding method? Whats the easiest structure - what is the best major tag? 
+#Primary = primary location for software (who wrote it?) - local file
+#Copy = Written by someone else, here is a copy - local file
+#Ref = Some one else's, no ownership, here is where to get it - non local file 
 
 @Data_Ref 
-#What gets referenced in this section? They reference every table, figure, and file - if we did that it would be many things. 
-#When do we reference specific files and when can we reference the major github repo or files within the repo? 
-#When do you need to add the size of the file? 
-#For example having an entry for GitHub scripts/ data/ output/ figures/ ? 
+#What gets referenced in this section? Would we need to reference every figure and table? Or could we reference a Figures or Scripts directory/folder? Sometimes we have dozens of figures and tables that change frequently until final publication. 
+#When do you need to add the size of the file as a minor tag? 
 
-#We need a complete list/key with all major and minor tags possible 
+#Data Primary, Copy, or Ref - Primary and Copy are local files that you want to be in the "bag" vs Ref would be something on GitHub, stored remotely 
+#Continue discussion on how we use "ref" but also claim ownership of data/software 
